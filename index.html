@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+</head>
+<body >
+    <div id="container">
+        <h1>P2 - Parte Prática - Matemática Discreta 2</h1>
+        <div id="input-container" >
+            <div id="handbook">
+                <h2>Manual de instruções</h2>
+                <details>
+                    <summary>Exemplos.</summary>
+                    <ol>
+                    <li>Caso deseje utilizar um dos exemplos predefinidos, selecione a caixa "Usar Exemplos";</li>
+                    <li>Em seguida, clique no exemplo que deseja utilizar;</li>
+                    <li>Selecione a saída que deseja obter para o exemplo em questão;</li>
+                    <li>OBS: É possível selecionar todas as saídas de uma só vez para obter o resultado.</li>
+                    </ol>
+                </details>
+                <details>
+                    <summary>Utilização normal.</summary>
+                    <ul>
+                    <li>Insira a Lista de Adjacências na área reservada;</li>
+                    <li>Em seguida, insira os vértices contidos em seu grafo;</li>
+                    <li>Selecione a saída que deseja obter marcando uma das opções ou todas;</li>
+                    <li>Algumas observações importantes para uso da interface;</li>
+                    <li>O número máximo de vértices no grafo é 10 e o número máximo de arestas é 30;</li>
+                    <li>Para utilizar as sáidas 4, 5, 8 e 9 são máximo 1 ou 2 vértices no grafo.</li>
+                    </ul>
+                </details>
+            </div>
+            <div id="examples-container">
+                <h2>Exemplos disponíveis:</h2>
+                <ul id="examples-ul">
+                    <li id="examples-li">
+                        <input type="checkbox" id="use-examples" onchange="onChange()"/>
+                        <label for="use-examples">Usar Exemplos</label>
+                    </li>
+                    <li id="examples-li">
+                        <input type="radio" name="examples" id="example1" disabled onfocus="onFocusRadio(1)" />
+                        <label for="example1">Exemplo 1</label>
+                    </li>
+                    <li id="examples-li">
+                        <input type="radio" name="examples" id="example2" disabled onfocus="onFocusRadio(2)" />
+                        <label for="example2">Exemplo 2</label>
+                    </li>
+                    <li id="examples-li">
+                        <input type="radio" name="examples" id="example3" disabled onfocus="onFocusRadio(3)" />
+                        <label for="example3">Exemplo 3</label>
+                    </li>
+                </ul>
+    
+            </div>
+            <label for="adjacency-list" id="label" >Insira sua Lista de adjacências:</label>
+            <textarea id="adjacency-list" placeholder="Digite aqui uma lista de adjacências..." rows="10" cols="50"></textarea>
+            <label for="vertexes" id="label" >Insira seus vértice(s):</label>
+            <input id="vertexes" type="text" placeholder="Digite aqui os vértices..." size="50" value="" />
+            <div id="selection-container">
+                <h2>Saídas:</h2>
+                <div>
+                    <input type="checkbox" id="adjacency-matrix"/>
+                    <label for="adjacency-matrix">1 - Matriz de Adjacências</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="alcancability-matrix-power"/>
+                    <label for="alcancability-matrix-power">2 - Matriz de Alcançabilidade através da Fórmula de Potências</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="alcancability-matrix-warshall"/>
+                    <label for="alcancability-matrix-warshall">3 - Matriz de Alcançabilidade através do Algoritmo de Warshall</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="visited-vertexes-depth-search"/>
+                    <label for="visited-vertexes-depth-search">4 - Vértices visitados a partir da Busca em Profundidade</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="visited-vertexes-width-search"/>
+                    <label for="visited-vertexes-width-search">5 - Vértices visitados a partir da Busca em Largura</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="vertexes-amount"/>
+                    <label for="vertexes-amount">6 - Quantidade de Vértices</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="archs-amount"/>
+                    <label for="archs-amount">7 - Quantidade de Arestas</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="how-many-come-in-out"/>
+                    <label for="how-many-come-in-out">8 - Quantidade de Arestas que saem e chegam aos vértices</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="verify-and-get-route"/>
+                    <label for="verify-and-get-route">9 - Caminho entre os vértices informados</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="complexity"/>
+                    <label for="complexity">10 - Comparação da Complexidade (Operações E/OU)</label>
+                </div>
+            </div>
+            <div id="input-button">
+                <button onCLick="readInputs()" id="button">Executar</button>
+            </div>
+        </div>
+        <span id="separator"></span>
+        <div id="output-container">
+            <ul id="output-ul">
+                <li id="error"></li>
+
+                
+                <li id="adjacency-matrix-output-label" class="output-label"></li>
+                <li id="adjacency-matrix-output" class="output-li"></li>
+
+                <li id="alcancability-matrix-power-output-label" class="output-label"></li>
+                <li id="alcancability-matrix-power-output" class="output-li"></li>
+
+                <li id="alcancability-matrix-warshall-output-label" class="output-label"></li>
+                <li id="alcancability-matrix-warshall-output" class="output-li"></li>
+
+                <li id="visited-vertexes-depth-search-output-label" class="output-label"></li>
+                <li id="visited-vertexes-depth-search-output" class="output-li"></li>
+
+                <li id="visited-vertexes-width-search-output-label" class="output-label"></li>
+                <li id="visited-vertexes-width-search-output" class="output-li"></li>
+
+                <li id="vertexes-amount-output-label" class="output-label"></li>
+                <li id="vertexes-amount-output" class="output-li"></li>
+
+                <li id="archs-amount-output-label" class="output-label"></li>
+                <li id="archs-amount-output" class="output-li"></li>
+
+                <li id="how-many-come-in-out-output-label" class="output-label"></li>
+                <li id="how-many-come-in-out-output" class="output-li"></li>
+
+                <li id="verify-and-get-route-output-label" class="output-label"></li>
+                <li id="verify-and-get-route-output" class="output-li"></li>
+
+                <li id="complexity-output-label" class="output-label"></li>
+                <li id="complexity-output" class="output-li"></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+body {
+    padding: 10px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(0,0,0,.05);
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ddd;
+    width: 80%;
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+    border: 1px solid rgb(100, 100, 100);
+
+}
+
+h1 {
+    text-align: center;
+}
+
+#input-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0px;
+    /* background-color: rgba(255,0,0,.5); */
+
+}
+
+
+#examples-container {
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 0px;
+}
+#handbook {
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+h2 {
+    margin: 0px;
+    font-size: 17pt;
+}
+
+#examples-li {
+    margin: 0px;
+    padding: 0px;
+}
+
+#label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#selection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    margin: 10px 0px;
+}
+
+#button {
+    height: 40px;
+    width: 120px;
+    margin: 10px 5px;
+    background-color: #aaa;
+    border-width: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#separator {
+    border-top: 1px solid #aaa;
+    width: 100%
+}
+
+.output-label {
+    font-size: 16pt;
+    color: rgb(70, 70, 70);
+}
+.output-li {
+    margin:10px 30px;
+}
